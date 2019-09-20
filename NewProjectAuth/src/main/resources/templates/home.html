@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .navbar {
+             overflow: hidden;
+             background-color: #333;
+                }
+        .navbar a {
+             float: right;
+             display: block;
+             color: white;
+             text-align: center;
+             padding: 14px 20px;
+             text-decoration: none;
+                  }
+        .navbar a.left{
+             float:left;
+        }
+    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>RUCHINETH</title>
 </head>
 <body>
-
+<!--div sec:authorize="isAuthenticated()">Authenticated as <span sec:authentication="password"></span></div-->
 <div class="container">
     <div class="jumbotron">
         <h1 class="text-center">Student Management System</h1>
+        <h1 class="text-right" sec:authorize="isAuthenticated()"> WELCOME <span sec:authentication="name"></span></h1>
     </div>
-    <div class="row">
-        <div class="col-lg-4">
+    <div class="navbar">
+        <a href="#" class="left">Home</a>
+        <a href="#">Create</a>
+        <a href="#">Fetch</a>
+        <a href="#">FetchAll</a>
 
-        </div>
-        <div class="col-lg-4">
-
-        </div>
-        <div class="col-lg-4">
-
-        </div>
+    </div>
 
     </div>
 
